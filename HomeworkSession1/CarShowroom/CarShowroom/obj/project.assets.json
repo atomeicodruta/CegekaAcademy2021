@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\cegeka\\CegekaAcademy2021\\HomeworkSession1\\CarShowroom\\CarShowroom\\CarShowroom.csproj",
+      "projectUniqueName": "D:\\CGK\\CegekaAcademy2021\\HomeworkSession1\\CarShowroom\\CarShowroom\\CarShowroom.csproj",
       "projectName": "CarShowroom",
-      "projectPath": "D:\\cegeka\\CegekaAcademy2021\\HomeworkSession1\\CarShowroom\\CarShowroom\\CarShowroom.csproj",
+      "projectPath": "D:\\CGK\\CegekaAcademy2021\\HomeworkSession1\\CarShowroom\\CarShowroom\\CarShowroom.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\cegeka\\CegekaAcademy2021\\HomeworkSession1\\CarShowroom\\CarShowroom\\obj\\",
+      "outputPath": "D:\\CGK\\CegekaAcademy2021\\HomeworkSession1\\CarShowroom\\CarShowroom\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

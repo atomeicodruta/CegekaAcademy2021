@@ -99,7 +99,7 @@ namespace CarShowroom
         {
             car.enginePower = EnginePower.PremiumPower;
             car.fuelType = FuelType.Hybrid;
-            car.polishType = CarPolish.PremiumPolish; 
+            car.polishType = CarPolish.PremiumPolish;
         }
 
         public static void CustomCar(Car car)
@@ -127,7 +127,7 @@ namespace CarShowroom
             customOption = Convert.ToInt32(Console.ReadLine());
             car.polishType = (CarPolish)customOption;
 
-    }
+        }
         public static void PrintCarCount()
         {
             Console.WriteLine($"\tCar count: {carCounter}.");
@@ -162,8 +162,8 @@ namespace CarShowroom
                 switch (menuOption)
                 {
                     case 1:
-                        
-                        Console.WriteLine("Choose a brand form the following options:"); 
+
+                        Console.WriteLine("Choose a brand form the following options:");
                         PrintCarBrands();
                         brandOption = Convert.ToInt32(Console.ReadLine());
 
@@ -172,18 +172,18 @@ namespace CarShowroom
                         packageOption = Convert.ToInt32(Console.ReadLine());
 
                         Car car = new Car((CarBrands)brandOption, (CarPackages)packageOption);
-                        
+
                         switch (packageOption)
                         {
-                            case 1:        
+                            case 1:
                                 EntryCar(car);
                                 Console.WriteLine("\nEntry car created.\n");
                                 break;
-                            case 2:      
+                            case 2:
                                 PlusCar(car);
                                 Console.WriteLine("\nPlus car created.\n");
                                 break;
-                            case 3: 
+                            case 3:
                                 PremiumCar(car);
                                 Console.WriteLine("\nPremium car created.\n");
                                 break;
@@ -201,13 +201,13 @@ namespace CarShowroom
 
                         if (carDisplay == 1)
                         {
-                            Console.WriteLine(car);  
+                            Console.WriteLine(car);
                         }
                         carsList.Add(car);
 
                         break;
                     case 2:
-                        if(carCounter == 0)
+                        if (carCounter == 0)
                         {
                             Console.WriteLine("\nOops..looks like there are no cars created so far.");
                         }
@@ -226,19 +226,18 @@ namespace CarShowroom
                         Console.WriteLine("\n\tGoodbye for now...\n");
                         break;
                     default:
+                        Console.WriteLine("\n\tOops..looks like you entered an undefined command.");
                         break;
                 }
 
-                if (menuOption != 4)
+                Console.WriteLine("\n\tGo back to menu?");
+                Console.WriteLine("\t\tYes - 1\n\t\tNo - 0");
+                menuOption = Convert.ToInt32(Console.ReadLine());
+                if (menuOption == 0)
                 {
-                    Console.WriteLine("\nOperation succesful. Go back to menu?");
-                    Console.WriteLine("\tYes - 1\n\tNo - 0");
-                    if(menuOption == 0)
-                    {
-                        Console.WriteLine("\n\tGoodbye for now...\n");
-                    }
-                    menuOption = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("\n\tGoodbye for now...\n");
                 }
+
             }
         }
     }
