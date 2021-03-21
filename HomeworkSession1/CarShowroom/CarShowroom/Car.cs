@@ -30,7 +30,7 @@ namespace CarShowroom
             int idx = 1;
             foreach (string brand in Enum.GetNames(typeof(CarBrands)))
             {
-                Console.WriteLine($"\t {idx}. {brand}");
+                Console.WriteLine($"\t\t{idx}. {brand}");
                 idx++;
             }
         }
@@ -40,12 +40,12 @@ namespace CarShowroom
             int idx = 1;
             foreach (string package in Enum.GetNames(typeof(CarPackages)))
             {
-                Console.WriteLine($"\t {idx}. {package}");
+                Console.WriteLine($"\t\t {idx}. {package}");
                 if (idx != 4)
                 {
-                    Console.WriteLine($"\t\t EnginePower: {(EnginePower)idx - 1}");
-                    Console.WriteLine($"\t\t FuelType: {(FuelType)idx - 1}");
-                    Console.WriteLine($"\t\t Polish: {(CarPolish)idx - 1}");
+                    Console.WriteLine($"\t\t\t EnginePower: {(EnginePower)idx - 1}");
+                    Console.WriteLine($"\t\t\t FuelType: {(FuelType)idx - 1}");
+                    Console.WriteLine($"\t\t\t Polish: {(CarPolish)idx - 1}");
                 }
                 idx++;
             }
@@ -56,7 +56,7 @@ namespace CarShowroom
             int idx = 1;
             foreach (string enginePwr in Enum.GetNames(typeof(EnginePower)))
             {
-                Console.WriteLine($"\t {idx}. {enginePwr}");
+                Console.WriteLine($"\t\t{idx}. {enginePwr}");
                 idx++;
             }
         }
@@ -66,7 +66,7 @@ namespace CarShowroom
             int idx = 1;
             foreach (string fuel in Enum.GetNames(typeof(FuelType)))
             {
-                Console.WriteLine($"\t {idx}. {fuel}");
+                Console.WriteLine($"\t\t{idx}. {fuel}");
                 idx++;
             }
         }
@@ -76,7 +76,7 @@ namespace CarShowroom
             int idx = 1;
             foreach (string polish in Enum.GetNames(typeof(CarPolish)))
             {
-                Console.WriteLine($"\t {idx}. {polish}");
+                Console.WriteLine($"\t\t{idx}. {polish}");
                 idx++;
             }
         }
@@ -107,23 +107,23 @@ namespace CarShowroom
             int customOption = 0;
 
             // Choose custom value for engine power
-            Console.WriteLine("Engine power options: ");
+            Console.WriteLine("\tEngine power options: ");
             PrintEnginePowerOptions();
-            Console.WriteLine("Choose preffered engine power option: ");
+            Console.WriteLine("\tChoose preffered engine power option: ");
             customOption = Convert.ToInt32(Console.ReadLine());
             car.enginePower = (EnginePower)customOption;
 
             // Choose custom value for fuel type
-            Console.WriteLine("Fuel type options: ");
+            Console.WriteLine("\tFuel type options: ");
             PrintFuelTypeOptions();
-            Console.WriteLine("Choose preffered fuel type option: ");
+            Console.WriteLine("\tChoose preffered fuel type option: ");
             customOption = Convert.ToInt32(Console.ReadLine());
             car.fuelType = (FuelType)customOption;
 
             // Choose custom value for car polish type
-            Console.WriteLine("Car polish type options: ");
+            Console.WriteLine("\tCar polish type options: ");
             PrintCarPolishOptions();
-            Console.WriteLine("Choose preffered car polish option: ");
+            Console.WriteLine("\tChoose preffered car polish option: ");
             customOption = Convert.ToInt32(Console.ReadLine());
             car.polishType = (CarPolish)customOption;
 
@@ -136,8 +136,8 @@ namespace CarShowroom
         public override string ToString()
         {
             return "\tCar brand: " + carBrand + "\n\tPackage type: " + packageType +
-                "\n\tEngine power: " + enginePower + "\n\tFuel type: " + fuelType +
-                "\n\tCar polish: " + polishType + "\n";
+                   "\n\tEngine power: " + enginePower + "\n\tFuel type: " + fuelType +
+                   "\n\tCar polish: " + polishType + "\n";
         }
 
         static void Main(string[] args)
@@ -147,15 +147,15 @@ namespace CarShowroom
 
             List<Car> carsList = new List<Car>();
 
-            Console.WriteLine("\nWelcome to our showroom! Rest assured, we have just the thing for you!");
-            Console.WriteLine("\n\tI want to...\n");
+            Console.WriteLine("\n\tWelcome to our showroom! Rest assured, we have just the thing for you!");
+            Console.WriteLine("\n\tChoose the option most suitable for you: \n");
 
             while ((menuOption >= 1) && (menuOption <= 3))
             {
-                Console.WriteLine("\t1. Create a car");
-                Console.WriteLine("\t2. View the cars manufactured so far");
-                Console.WriteLine("\t3. View car count");
-                Console.WriteLine("\t4. Exit showroom");
+                Console.WriteLine("\t\t1. Create a car");
+                Console.WriteLine("\t\t2. View the cars manufactured so far");
+                Console.WriteLine("\t\t3. View car count");
+                Console.WriteLine("\t\t4. Exit showroom");
 
                 menuOption = Convert.ToInt32(Console.ReadLine());
 
@@ -163,11 +163,11 @@ namespace CarShowroom
                 {
                     case 1:
 
-                        Console.WriteLine("Choose a brand form the following options:");
+                        Console.WriteLine("\tChoose a brand form the following options:");
                         PrintCarBrands();
                         brandOption = Convert.ToInt32(Console.ReadLine());
 
-                        Console.WriteLine("Choose a package:");
+                        Console.WriteLine("\tChoose a package:");
                         PrintCarPackages();
                         packageOption = Convert.ToInt32(Console.ReadLine());
 
@@ -177,26 +177,26 @@ namespace CarShowroom
                         {
                             case 1:
                                 EntryCar(car);
-                                Console.WriteLine("\nEntry car created.\n");
+                                Console.WriteLine("\nEntry package car created.\n");
                                 break;
                             case 2:
                                 PlusCar(car);
-                                Console.WriteLine("\nPlus car created.\n");
+                                Console.WriteLine("\nPlus package car created.\n");
                                 break;
                             case 3:
                                 PremiumCar(car);
-                                Console.WriteLine("\nPremium car created.\n");
+                                Console.WriteLine("\nPremium package car created.\n");
                                 break;
                             case 4:
                                 CustomCar(car);
-                                Console.WriteLine("\nCustom car created.\n");
+                                Console.WriteLine("\nCustom package car created.\n");
                                 break;
                             default:
                                 break;
                         }
 
-                        Console.WriteLine("\nDo you want to view the created car?");
-                        Console.WriteLine("\tYes - 1\n\tNo - 0");
+                        Console.WriteLine("\n\tDo you want to view the created car?");
+                        Console.WriteLine("\t\tYes - 1\n\t\tNo - 0");
                         carDisplay = Convert.ToInt32(Console.ReadLine());
 
                         if (carDisplay == 1)
@@ -209,7 +209,7 @@ namespace CarShowroom
                     case 2:
                         if (carCounter == 0)
                         {
-                            Console.WriteLine("\nOops..looks like there are no cars created so far.");
+                            Console.WriteLine("\n\tOops..looks like there are no cars created so far.");
                         }
                         else
                         {
@@ -230,12 +230,15 @@ namespace CarShowroom
                         break;
                 }
 
-                Console.WriteLine("\n\tGo back to menu?");
-                Console.WriteLine("\t\tYes - 1\n\t\tNo - 0");
-                menuOption = Convert.ToInt32(Console.ReadLine());
-                if (menuOption == 0)
+                if (menuOption != 4)
                 {
-                    Console.WriteLine("\n\tGoodbye for now...\n");
+                    Console.WriteLine("\n\tGo back to menu?");
+                    Console.WriteLine("\t\tYes - 1\n\t\tNo - 0");
+                    menuOption = Convert.ToInt32(Console.ReadLine());
+                    if (menuOption == 0)
+                    {
+                        Console.WriteLine("\n\tGoodbye for now...\n");
+                    }
                 }
 
             }
