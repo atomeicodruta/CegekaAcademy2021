@@ -1,0 +1,16 @@
+D:\cegeka\CegekaAcademy2021\CarShowroom\CarShowroom\bin\Debug\net5.0\CarShowroom.exe
+D:\cegeka\CegekaAcademy2021\CarShowroom\CarShowroom\bin\Debug\net5.0\CarShowroom.deps.json
+D:\cegeka\CegekaAcademy2021\CarShowroom\CarShowroom\bin\Debug\net5.0\CarShowroom.runtimeconfig.json
+D:\cegeka\CegekaAcademy2021\CarShowroom\CarShowroom\bin\Debug\net5.0\CarShowroom.runtimeconfig.dev.json
+D:\cegeka\CegekaAcademy2021\CarShowroom\CarShowroom\bin\Debug\net5.0\CarShowroom.dll
+D:\cegeka\CegekaAcademy2021\CarShowroom\CarShowroom\bin\Debug\net5.0\ref\CarShowroom.dll
+D:\cegeka\CegekaAcademy2021\CarShowroom\CarShowroom\bin\Debug\net5.0\CarShowroom.pdb
+D:\cegeka\CegekaAcademy2021\CarShowroom\CarShowroom\obj\Debug\net5.0\CarShowroom.csprojAssemblyReference.cache
+D:\cegeka\CegekaAcademy2021\CarShowroom\CarShowroom\obj\Debug\net5.0\CarShowroom.GeneratedMSBuildEditorConfig.editorconfig
+D:\cegeka\CegekaAcademy2021\CarShowroom\CarShowroom\obj\Debug\net5.0\CarShowroom.AssemblyInfoInputs.cache
+D:\cegeka\CegekaAcademy2021\CarShowroom\CarShowroom\obj\Debug\net5.0\CarShowroom.AssemblyInfo.cs
+D:\cegeka\CegekaAcademy2021\CarShowroom\CarShowroom\obj\Debug\net5.0\CarShowroom.csproj.CoreCompileInputs.cache
+D:\cegeka\CegekaAcademy2021\CarShowroom\CarShowroom\obj\Debug\net5.0\CarShowroom.dll
+D:\cegeka\CegekaAcademy2021\CarShowroom\CarShowroom\obj\Debug\net5.0\ref\CarShowroom.dll
+D:\cegeka\CegekaAcademy2021\CarShowroom\CarShowroom\obj\Debug\net5.0\CarShowroom.pdb
+D:\cegeka\CegekaAcademy2021\CarShowroom\CarShowroom\obj\Debug\net5.0\CarShowroom.genruntimeconfig.cache
