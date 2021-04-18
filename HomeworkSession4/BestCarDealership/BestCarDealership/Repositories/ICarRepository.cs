@@ -16,7 +16,7 @@ namespace BestCarDealership.Repositories
 
         public Car UpdateCar(int id, Car car);
 
-        public void RemoveCarById(int id);
+        public Car RemoveCarById(int id);
 
     }
 }

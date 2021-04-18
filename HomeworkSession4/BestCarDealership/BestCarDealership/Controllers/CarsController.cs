@@ -13,29 +13,34 @@ namespace BestCarDealership.Controllers
     [ApiController]
     public class CarsController : ControllerBase
     {
-        private readonly ICarRepository CarRepo;
+        private static ICarRepository CarRepo;
 
         public CarsController(ICarRepository carRepo)
         {
             CarRepo = carRepo;
         }
 
-        // GET: api/<CarsController>
-        [HttpGet]
+
+        [HttpGet]   // GET: api/<CarsController> = api/Cars
         public IActionResult GetCars()
         {
             return Ok(CarRepo.GetCars());
         }
 
-        // GET api/<CarsController>/5
-        [HttpGet("car/{id}")]
-        public Car GetCarById(int id)
+
+        [HttpGet("car/{id}")]   // GET api/<CarsController>/{id}
+        public IActionResult GetCarById(int id)
         {
-            return CarRepo.GetCarById(id);
+            var returnedCar = CarRepo.GetCarById(id);
+
+            if(returnedCar == null)
+                return NotFound("The car with the given id does not exist!");
+            else
+                return Ok(returnedCar);
         }
 
-        //POST api/<CarsController>
-        [HttpPost]
+        
+        [HttpPost]  //POST api/<CarsController>/car
         [Route("car")]
         public IActionResult AddCar([FromBody] Car car)
         {
@@ -43,27 +48,34 @@ namespace BestCarDealership.Controllers
             {
                 CarRepo.AddCar(car);
                 //return Ok();
-                //CarRepo.AddCar(car);
-                return Created(car.Id.ToString(),car);
+                return Ok(Created(car.Id.ToString(), car));
             }
             return BadRequest();
         }
 
-        private IActionResult UpdateCar([FromBody] int id, [FromBody] Car car)
+
+        [HttpPut("{id}")] //POST api/<CarsController>/{id}
+        public IActionResult UpdateCar(int id, [FromBody] Car car)
         {
-            throw new NotImplementedException();
+            if(CarRepo.UpdateCar(id, car) != null)
+            {
+                //return Ok();
+                return Created(car.Id.ToString(), car);
+            }
+
+            return NotFound("The car with the given id does not exist!");
+            //return BadRequest();
         }
 
-        // PUT api/<CarsController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+       
+        [HttpDelete("{id}")]     // DELETE api/<CarsController>/{id}
+        public IActionResult Delete(int id)
         {
-        }
-
-        // DELETE api/<CarsController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            if(CarRepo.RemoveCarById(id) != null)
+            {
+                return Ok();
+            }
+            return NotFound("The car with the given id does not exist!");
         }
     }
 }

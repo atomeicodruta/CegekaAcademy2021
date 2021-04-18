@@ -8,14 +8,14 @@ namespace BestCarDealership.Repositories
 {
     public class CarRepository :ICarRepository
     {
-        private List<Car> _cars = new List<Car>()
+        protected static List<Car> _cars = new List<Car>()
         {
-            //Car(int id, string manufacturer, string model, int horsePower, double price, Color color)
+            //Car(int id, string manufacturer, string model, int horsePower, double price)
 
-            new Car(1, "Audi", "Ax", 500, 750000, Color.WHITE),
-            new Car(2, "Porsche", "Taycan", 999, 1000000, Color.BLACK),
-            new Car(3, "Volskwagen", "Beetle", 120, 50000, Color.RED),
-            new Car(4, "Honda", "Civic", 250, 250000, Color.GREEN)
+            new Car(1, "Audi", "Ax", 500, 750000),
+            new Car(2, "Porsche", "Taycan", 999, 1000000),
+            new Car(3, "Volskwagen", "Beetle", 120, 50000),
+            new Car(4, "Honda", "Civic", 250, 250000)
         };
 
         public List<Car> GetCars()
@@ -41,14 +41,17 @@ namespace BestCarDealership.Repositories
 
                 if(carToUpdate != null)
                 {
-                    carToUpdate = car;
-                    carToUpdate.Id = id;
-                    //carToUpdate.Manufacturer = car.Manufacturer;
-                    //carToUpdate.Model = car.Model;
-                    //carToUpdate.HorsePower = car.HorsePower;
-                    //carToUpdate.Price = car.Price;
-                    //carToUpdate.Color = car.Color;
-
+                    if(car.Id != 0)
+                        carToUpdate.Id = car.Id;
+                    if(car.Manufacturer != null)
+                        carToUpdate.Manufacturer = car.Manufacturer;
+                    if(car.Model != null)
+                        carToUpdate.Model = car.Model;
+                    if (car.HorsePower != 0)
+                        carToUpdate.HorsePower = car.HorsePower;
+                    if (car.Price >= 0)
+                        carToUpdate.Price = car.Price;
+                   
                     return carToUpdate;
                 }
                 return null;
@@ -56,14 +59,16 @@ namespace BestCarDealership.Repositories
             return null;
         }
 
-        public void RemoveCarById(int id)
+        public Car RemoveCarById(int id)
         {
             var car = _cars.FirstOrDefault(x => x.Id == id);
 
             if(car != null)
             {
                 _cars.Remove(car);
+                return car;
             }
+            return null;
         }
     }
 }

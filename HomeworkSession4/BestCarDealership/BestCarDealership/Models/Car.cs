@@ -5,14 +5,6 @@ using System.Threading.Tasks;
 
 namespace BestCarDealership.Models
 {
-    public enum Color
-    {
-        WHITE,
-        GREEN,
-        RED,
-        BLUE,
-        BLACK
-    }
     public class Car
     {
         public int Id { get; set; }
@@ -20,17 +12,17 @@ namespace BestCarDealership.Models
         public string Model { get; set; }
         public int HorsePower { get; set; }
         public double Price { get; set; }
-        public Color Color { get; set; }
 
-        public Car(int id, string manufacturer, string model, int horsePower, double price, Color color)
+        public Car(int id, string manufacturer, string model, int horsePower, double price)
         {
             Id = id;
             Manufacturer = manufacturer;
             Model = model;
             HorsePower = horsePower;
             Price = price;
-            Color = color;
         }
+
+        //public Car(Car c) : this(c.Id, c.Manufacturer, c.Model, c.HorsePower, c.Price) { }
 
     }
 }
